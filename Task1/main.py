@@ -11,6 +11,7 @@
     -> 1
 
 '''
+count = 0
 
 while(True):
     try:
@@ -24,14 +25,17 @@ while(True):
         print('Число должно быть ,больше нуля!')
 
 array = []
-readInt = 0
+
 for i in range(N):
     while(True):
         try:
+            #Ввод пытаемся преобразовать в число с плавающей точкой, на случай если ввели не целое число
             readInt = float(input(f"Введите {i} элементы массива (целое число):"  ))
+        #Если при преобразовании в float возникло исключение, выводим ошибку и завершаем иттерацию цикла while
         except:
             print('Введено не число!')
             continue
+        #Если попали сюда, значит всё нормально, проверяем равны ли числа типа float и преобразованное в int(откинули дробную часть если она была)
         if  int(readInt) == readInt:
             break
         else:
@@ -39,4 +43,19 @@ for i in range(N):
 
     array.append(int(readInt))
 
-print(array)
+while(True):
+        try:
+            X = float(input(f"Введите целое число X:"  ))
+        except:
+            print('Введено не число!')
+            continue
+        if  int(X) == X:
+            X = int(X)
+            break
+        else:
+            print('Число должно быть, целым!')
+
+for i in array:
+    if(i == X): count += 1
+
+print(f'Кол-во чисел {X} встребщихся в веденном массиве равно: {count}')
