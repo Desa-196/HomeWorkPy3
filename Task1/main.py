@@ -55,6 +55,7 @@ while(True):
         else:
             print('Число должно быть, целым!')
 
+#Считаем кол-во чисел X в массиве
 for i in array:
     if(i == X): count += 1
 
