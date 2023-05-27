@@ -9,3 +9,15 @@
     -> 1
 
 '''
+
+while(True):
+    try:
+        readInt = int(    input("Введите кол-во элементов массива':"  ))
+    except:
+        print('Введено не число!')
+        continue
+    if readInt > 0:
+        break
+    else:
+        print('Число должно быть ,больше нуля!')
+
